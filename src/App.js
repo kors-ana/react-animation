@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Transition from "react-transition-group/Transition";
 import "./App.css";
-import Modal from "./components/Modal/Modal";
+// import Modal from "./components/Modal/Modal";
+import ModalCSSTransition from "./components/ModalCSSTransition/Modal";
 import Backdrop from "./components/Backdrop/Backdrop";
 import List from "./components/List/List";
 
@@ -53,8 +54,12 @@ class App extends Component {
           )}
         </Transition>
         <br />
+        {/* <Modal show={this.state.modalIsOpen} closed={this.closeModal} /> */}
 
-        <Modal show={this.state.modalIsOpen} closed={this.closeModal} />
+        <ModalCSSTransition
+          show={this.state.modalIsOpen}
+          closed={this.closeModal}
+        />
 
         {this.state.modalIsOpen && <Backdrop show={this.state.modalIsOpen} />}
         <button className="Button" onClick={this.showModal}>
